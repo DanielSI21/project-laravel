@@ -16,24 +16,24 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = 'Benito';
-        $user->lastname = 'Juarez';
-        $user->email = 'benito@gmail.com';
-        $user->password = 'secret';
+        $user->name = 'Anakin';
+        $user->lastname = 'Skywalker';
+        $user->email = 'anakin@gmail.com';
+        $user->password = bcrypt('secret');
         $user->save();
 
         $user = new User();
-        $user->name = 'Venustiano';
-        $user->lastname = 'Carranza';
-        $user->email = 'venustiano@gmail.com';
-        $user->password = 'secret';
+        $user->name = 'Malcolm';
+        $user->lastname = 'Wilkerson';
+        $user->email = 'malcolm@gmail.com';
+        $user->password = bcrypt('secret');
         $user->save();
 
         $user = new User();
         $user->name = 'Daniel';
         $user->lastname = 'Sepulveda';
         $user->email = 'daniel@gmail.com';
-        $user->password = 'secret';
+        $user->password = bcrypt('secret');
         $user->save();
     }
 }
