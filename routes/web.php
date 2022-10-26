@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +55,12 @@ Route::get('clients/{id}', [ClientController::class, 'show'])->name('clients.sho
 Route::post('clients', [ClientController::class, 'store'])->name('clients.store');
 Route::put('clients', [ClientController::class, 'update'])->name('clients.update');
 Route::delete('clients', [ClientController::class, 'destroy'])->name('clients.destroy');
+
+//reservation
+Route::get('reservations', [ReservationController::class, 'index'])->name('reservations');
+Route::get('reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+Route::get('reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
+Route::post('reservations', [ReservationController::class, 'store'])->name('reservations.store');
+Route::put('reservations', [ReservationController::class, 'update'])->name('reservations.update');
+Route::delete('reservations', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
