@@ -15,4 +15,9 @@ class Room extends Model
         'capacity',
         'type',
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany('App\Models\Reservation');
+    }
 }

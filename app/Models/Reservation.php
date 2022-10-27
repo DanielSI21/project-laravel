@@ -33,18 +33,8 @@ class Reservation extends Model
         return $this->belongsTo(Room::class);
     }
 
-    public function rate()
-    {
-        return $this->belongsTo(Rate::class);
-    }
-
     public function client()
     {
         return $this->belongsTo(Client::class);
-    }
-
-    public function reservations_rooms()
-    {
-        return $this->hasMany(ReservationRoom::class);
     }
 }
