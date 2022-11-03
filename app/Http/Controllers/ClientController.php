@@ -21,7 +21,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return Client::with('reservations')->get();
+        $breadcrum_info = $this->breadcrum_info;
+        $clients =  Client::with('reservations')->get();
+        return view('clients.index', compact('clients', 'breadcrum_info'));
     }
 
     /**
