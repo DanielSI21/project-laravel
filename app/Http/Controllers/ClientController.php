@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    public $breadcrum_info = array(
+        "main_title" => "Clientes",
+        "second_level" => "",
+        "add_button" => true,
+        "ref" => "clients"
+    );
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +31,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        $breadcrum_info = $this->breadcrum_info;
+        return view('clients.create', compact('breadcrum_info'));
     }
 
     /**
@@ -35,7 +43,10 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = Client::create($request->all());
+        $client->save();
+
+        return $client;
     }
 
     /**
