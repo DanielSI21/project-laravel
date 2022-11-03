@@ -52,6 +52,7 @@ Route::delete('users', [UserController::class, 'destroy'])->name('users.destroy'
 Route::get('clients', [ClientController::class, 'index'])->name('clients');
 Route::get('clients/create', [ClientController::class, 'create'])->name('clients.create');
 Route::get('clients/{id}', [ClientController::class, 'show'])->name('clients.show');
+Route::get('clients/edit/{id}', [ClientController::class, 'edit'])->name('clients.edit');
 Route::post('clients', [ClientController::class, 'store'])->name('clients.store');
 Route::put('clients', [ClientController::class, 'update'])->name('clients.update');
 Route::delete('clients', [ClientController::class, 'destroy'])->name('clients.destroy');
