@@ -65,3 +65,14 @@ Route::post('reservations', [ReservationController::class, 'store'])->name('rese
 Route::put('reservations', [ReservationController::class, 'update'])->name('reservations.update');
 Route::delete('reservations', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/prueba', function () {
+    return "Hola";
+})->middleware('auth');
